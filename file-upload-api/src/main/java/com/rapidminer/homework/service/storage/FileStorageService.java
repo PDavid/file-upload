@@ -3,8 +3,6 @@ package com.rapidminer.homework.service.storage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +19,7 @@ public class FileStorageService {
     // TODO: Move this to config!
     private final Path fileStorageLocation = Path.of("/home/paksyd-private/projects/homework/media/upload");
 
-    public UUID storeFile(UUID id, String fileName, InputStream inputStream) {
+    public void storeFile(UUID id, String fileName, InputStream inputStream) {
         LOGGER.debug("Storing file with id: '{}', file name: '{}'...", id, fileName);
 
         Path directory = this.fileStorageLocation.resolve(id.toString());
@@ -34,8 +32,6 @@ public class FileStorageService {
             Files.copy(inputStream, targetLocation, StandardCopyOption.REPLACE_EXISTING);
 
             LOGGER.debug("Successfully stored file with id: '{}', file name: '{}' to location: '{}'", id, fileName, targetLocation);
-
-            return id;
         } catch (IOException e) {
             throw new FileStorageException("Could not store file " + fileName + ".", e);
         }

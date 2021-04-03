@@ -20,7 +20,7 @@ public class ConverterService {
         try {
             Thread.sleep(10 * 1000);
         } catch (InterruptedException e) {
-            throw new ConverterException("Failed to convert file with name: " + fileName + ".", e);
+            throw new ConversionException("Failed to convert file with name: " + fileName + ".", e);
         }
 
         LOG.debug("Successfully converted file with id: '{}', name: '{}'...", id, fileName);

@@ -1,3 +1,4 @@
 rootProject.name = 'file-upload'
 
 include 'file-upload-api'
+include 'file-upload-frontend'

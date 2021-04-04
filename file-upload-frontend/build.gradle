@@ -1,0 +1,81 @@
+plugins {
+  id 'com.github.node-gradle.node' version '2.2.4'
+}
+
+apply plugin: 'base'
+
+node {
+  download = false
+}
+
+npm_ci {
+  inputs.files('angular.json', 'package-lock.json', 'package.json', 'tsconfig.json')
+  outputs.dir('node_modules')
+}
+
+task buildProd(type: NpmTask) {
+  inputs.dir 'src'
+  inputs.files('angular.json', 'package-lock.json', 'package.json', 'tsconfig.json')
+  outputs.dir 'dist'
+  dependsOn npm_ci
+  args = ['run', 'build', '--', '--prod']
+}
+
+assemble.dependsOn buildProd
+
+String lintExecutedMarkerName = "${buildDir}/.lint.executed"
+
+task ngLint(type: NpmTask) {
+  inputs.files fileTree("src")
+  inputs.file 'tslint.json'
+
+  dependsOn npm_ci
+  args = ['run', 'lint']
+
+  doLast {
+    new File(lintExecutedMarkerName).text = 'delete this file to force re-execution of linting'
+  }
+  outputs.file lintExecutedMarkerName
+}
+check.dependsOn ngLint
+
+String testsExecutedMarkerName = "${buildDir}/.tests.executed"
+
+task ngUnitTest(type: NpmTask) {
+  inputs.files fileTree('src')
+  inputs.file 'package.json'
+  inputs.file 'package-lock.json'
+  dependsOn npm_ci
+
+  args = ['run', 'test']
+
+  doLast {
+    new File(testsExecutedMarkerName).text = 'delete this file to force re-execution unit tests'
+  }
+  outputs.file testsExecutedMarkerName
+}
+check.dependsOn ngUnitTest
+
+String e2eExecutionMarkerName = "${buildDir}/.e2e.executed"
+
+task ngE2e(type: NpmTask) {
+  inputs.files fileTree('src')
+  inputs.files fileTree('e2e')
+  inputs.file 'package.json'
+  inputs.file 'package-lock.json'
+  dependsOn npm_ci
+  args = ['run', 'ng', 'e2e']
+
+  doLast {
+    new File(e2eExecutionMarkerName).text = 'delete this file to force re-execution of e2e tests'
+  }
+  outputs.file e2eExecutionMarkerName
+}
+task systemTest { dependsOn ngE2e }
+
+clean {
+  delete buildDir
+  delete 'dist'
+  delete 'coverage'
+  delete 'node_modules'
+}

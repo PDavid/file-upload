@@ -1,8 +1,8 @@
-package com.rapidminer.fileupload.controller;
+package com.paksyd.fileupload.controller;
 
-import com.rapidminer.fileupload.model.UploadResponse;
-import com.rapidminer.fileupload.service.upload.UploadException;
-import com.rapidminer.fileupload.service.upload.UploadService;
+import com.paksyd.fileupload.model.UploadResponse;
+import com.paksyd.fileupload.service.upload.UploadException;
+import com.paksyd.fileupload.service.upload.UploadService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

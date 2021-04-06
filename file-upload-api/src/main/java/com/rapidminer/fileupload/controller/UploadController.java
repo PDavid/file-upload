@@ -1,8 +1,8 @@
-package com.rapidminer.homework.controller;
+package com.rapidminer.fileupload.controller;
 
-import com.rapidminer.homework.model.UploadResponse;
-import com.rapidminer.homework.service.upload.UploadException;
-import com.rapidminer.homework.service.upload.UploadService;
+import com.rapidminer.fileupload.model.UploadResponse;
+import com.rapidminer.fileupload.service.upload.UploadException;
+import com.rapidminer.fileupload.service.upload.UploadService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

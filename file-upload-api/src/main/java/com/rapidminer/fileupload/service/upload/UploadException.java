@@ -1,4 +1,4 @@
-package com.rapidminer.homework.service.upload;
+package com.rapidminer.fileupload.service.upload;
 
 public class UploadException extends RuntimeException {
 

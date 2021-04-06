@@ -1,4 +1,4 @@
-package com.rapidminer.homework;
+package com.rapidminer.fileupload;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.rapidminer.homework.service.storage;
+package com.rapidminer.fileupload.service.storage;
 
 public class FileStorageException extends RuntimeException {
 

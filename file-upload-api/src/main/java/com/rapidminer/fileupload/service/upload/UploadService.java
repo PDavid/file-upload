@@ -1,8 +1,8 @@
-package com.rapidminer.homework.service.upload;
+package com.rapidminer.fileupload.service.upload;
 
-import com.rapidminer.homework.model.Status;
-import com.rapidminer.homework.service.converter.ConverterService;
-import com.rapidminer.homework.service.storage.FileStorageService;
+import com.rapidminer.fileupload.model.Status;
+import com.rapidminer.fileupload.service.converter.ConverterService;
+import com.rapidminer.fileupload.service.storage.FileStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.rapidminer.homework.service.converter;
+package com.rapidminer.fileupload.service.converter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

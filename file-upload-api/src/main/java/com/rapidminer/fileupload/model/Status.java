@@ -1,4 +1,4 @@
-package com.rapidminer.homework.model;
+package com.rapidminer.fileupload.model;
 
 public enum Status {
     UPLOADING,

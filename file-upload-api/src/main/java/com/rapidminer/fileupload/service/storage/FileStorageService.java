@@ -1,4 +1,4 @@
-package com.rapidminer.homework.service.storage;
+package com.rapidminer.fileupload.service.storage;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +17,7 @@ public class FileStorageService {
     private static final Logger LOGGER = LoggerFactory.getLogger(FileStorageService.class);
 
     // TODO: Move this to config!
-    private final Path fileStorageLocation = Path.of("/home/paksyd-private/projects/homework/media/upload");
+    private final Path fileStorageLocation = Path.of("upload");
 
     public void storeFile(UUID id, String fileName, InputStream inputStream) {
         LOGGER.debug("Storing file with id: '{}', file name: '{}'...", id, fileName);

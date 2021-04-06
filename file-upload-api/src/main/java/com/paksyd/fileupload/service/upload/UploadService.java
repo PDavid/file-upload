@@ -109,7 +109,7 @@ public class UploadService {
         }
     }
 
-    private boolean isExcelFile(String fileName) {
+    boolean isExcelFile(String fileName) {
         if (fileName == null || fileName.isBlank()) {
             return false;
         }

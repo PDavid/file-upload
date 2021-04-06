@@ -1,4 +1,4 @@
 allprojects {
-	group = 'com.rapidminer'
+	group = 'com.paksyd'
 	version = '0.0.1-SNAPSHOT'
 }

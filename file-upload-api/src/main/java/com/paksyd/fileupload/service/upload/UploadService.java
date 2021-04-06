@@ -1,8 +1,8 @@
-package com.rapidminer.fileupload.service.upload;
+package com.paksyd.fileupload.service.upload;
 
-import com.rapidminer.fileupload.model.Status;
-import com.rapidminer.fileupload.service.converter.ConverterService;
-import com.rapidminer.fileupload.service.storage.FileStorageService;
+import com.paksyd.fileupload.service.converter.ConverterService;
+import com.paksyd.fileupload.model.Status;
+import com.paksyd.fileupload.service.storage.FileStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

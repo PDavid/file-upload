@@ -1,4 +1,4 @@
-package com.rapidminer.fileupload.service.storage;
+package com.paksyd.fileupload.service.storage;
 
 public class FileStorageException extends RuntimeException {
 

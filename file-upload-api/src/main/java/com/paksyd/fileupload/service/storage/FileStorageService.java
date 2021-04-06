@@ -1,4 +1,4 @@
-package com.rapidminer.fileupload.service.storage;
+package com.paksyd.fileupload.service.storage;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

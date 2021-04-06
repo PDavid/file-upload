@@ -1,4 +1,4 @@
-package com.rapidminer.fileupload.model;
+package com.paksyd.fileupload.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

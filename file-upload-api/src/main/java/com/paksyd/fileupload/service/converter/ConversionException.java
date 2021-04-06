@@ -1,4 +1,4 @@
-package com.rapidminer.fileupload.service.converter;
+package com.paksyd.fileupload.service.converter;
 
 public class ConversionException extends RuntimeException {
 

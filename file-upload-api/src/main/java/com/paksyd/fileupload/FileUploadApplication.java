@@ -6,10 +6,10 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
 @EnableAsync
-public class CodingChallengeApplication {
+public class FileUploadApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CodingChallengeApplication.class, args);
+		SpringApplication.run(FileUploadApplication.class, args);
 	}
 
 }

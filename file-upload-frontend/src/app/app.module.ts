@@ -14,6 +14,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import {HttpClientModule} from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
+    MatProgressBarModule,
     ReactiveFormsModule
   ],
   providers: [],

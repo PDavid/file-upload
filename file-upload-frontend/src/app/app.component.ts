@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
   selector: 'fup-root',
@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
     <mat-toolbar>
       <span>Excel viewer</span>
     </mat-toolbar>
-    <fup-file-upload></fup-file-upload>
+    <div class="container-wrapper">
+      <div class="container">
+          <fup-file-upload></fup-file-upload>
+      </div>
+    </div>
   `,
   styleUrls: ['./app.component.scss']
 })

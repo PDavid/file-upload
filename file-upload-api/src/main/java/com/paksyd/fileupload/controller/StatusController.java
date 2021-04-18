@@ -24,7 +24,7 @@ public class StatusController {
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping(path = "{id}")
+    @GetMapping(path = "{id}")
     public ResponseEntity<StatusResponse> getStatus(@PathVariable("id") UUID id) {
         // TODO: Check if id can be null here and return 400 if it is!
         Status status = this.uploadService.getStatus(id);

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {FileUploadService} from './file-upload.service';
-import {catchError, finalize, map} from 'rxjs/operators';
-import {HttpErrorResponse, HttpEvent, HttpEventType, HttpProgressEvent} from '@angular/common/http';
-import {of, Subscription} from 'rxjs';
+import {finalize} from 'rxjs/operators';
+import {HttpEvent, HttpEventType, HttpProgressEvent} from '@angular/common/http';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'fup-file-upload',
@@ -46,8 +46,6 @@ export class FileUploadComponent {
   constructor(private uploadService: FileUploadService) {}
 
   onFileSelected(event: Event): void {
-    console.log('onFileSelected() invoked.', event?.target);
-
     const input = event?.target as HTMLInputElement;
 
     const file: File | null = input?.files ? input.files[0] : null;
@@ -61,10 +59,6 @@ export class FileUploadComponent {
       this.uploadSub = this.uploadService.upload(formData)
         .pipe(
           finalize(() => this.reset())
-          /*catchError((error: HttpErrorResponse) => {
-            file.inProgress = false;
-            return of(`Upload failed: ${file.name}`);
-          })*/
         )
         .subscribe((httpEvent: HttpEvent<object>) => {
           if (httpEvent.type === HttpEventType.UploadProgress) {

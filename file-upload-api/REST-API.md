@@ -41,10 +41,33 @@ GET /api/file/<id>
 
 HTTP 200 OK
 
-TODO: Describe table in JSON!
-
 ```json
 {
-  "rows": [{}]
+  "rows":[
+    {
+      "columns":[
+        "0.0",
+        "First Name",
+        "Last Name",
+        "Gender",
+        "Country",
+        "Age",
+        "Date",
+        "Id"
+      ]
+    },
+    {
+      "columns":[
+        "1.0",
+        "Dulce",
+        "Abril",
+        "Female",
+        "United States",
+        "32.0",
+        "15/10/2017",
+        "1562.0"
+      ]
+    }
+  ]
 }
 ```
